@@ -114,10 +114,10 @@ jobs:
       run: |
         ECR_REGISTRY="988079434395.dkr.ecr.$AWS_REGION.amazonaws.com"
         
-        kubectl set image deployment/my-temp-app \
+        kubectl set image deployment/temp-app \
           temp-app=$ECR_REGISTRY/$ECR_REPOSITORY:${{ env.SHORT_SHA }} \
           -n $K8S_NAMESPACE
           
-        kubectl rollout status deployment/my-temp-app \
+        kubectl rollout status deployment/temp-app \
           -n $K8S_NAMESPACE \
           --timeout=180s
