@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: temp-app
+  namespace: default
+  labels:
+    app: temp-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: temp-app
+  template:
+    metadata:
+      labels:
+        app: temp-app
+    spec:
+      containers:
+      - name: temp-app
+        # Format: <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository_name>:<tag>
+        image: 988079434395.dkr.ecr.eu-west-3.amazonaws.com/temp-converter-api:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "250m"
+            memory: "256Mi"
