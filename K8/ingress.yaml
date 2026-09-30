@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: temp-app-ingress
-  namespace: default
+  namespace: temp-app
   annotations:
     # Optional: Use annotations if your controller doesn't support ingressClassName
     # kubernetes.io/ingress.class: "nginx"

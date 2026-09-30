@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: temp-app
-  namespace: default
+  namespace: temp-app
   labels:
     app: temp-app
 spec:
