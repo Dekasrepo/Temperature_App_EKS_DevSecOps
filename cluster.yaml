@@ -2,7 +2,7 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: cicd-cluster
+  name: my-eks-cluster
   region: eu-west-3
   version: "1.36"
 
