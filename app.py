@@ -194,3 +194,4 @@ def convert_legacy():
 if __name__ == "__main__":
     # Local development only. In the container, gunicorn serves the app (see Dockerfile).
     app.run(host=os.environ.get("HOST", "127.0.0.1"), port=int(os.environ.get("PORT", "8080")))
+    

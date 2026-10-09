@@ -79,3 +79,4 @@ def test_legacy_convert(client):
 def test_legacy_convert_missing_param(client):
     response = client.get("/convert")
     assert response.status_code == 400
+    
